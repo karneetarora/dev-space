@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio
 
-## Getting Started
+A modern personal portfolio showcasing my work as a **Full-Stack Developer & Product Designer**.
 
-First, run the development server:
+Designed and developed from the ground up to highlight selected projects, professional experience, technical skills, and my approach to building thoughtful digital products.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This portfolio serves as a central place to showcase my work across **software engineering, full-stack development, and product design**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The site was designed with a focus on creating an experience that feels modern, vibrant, and distinctly personal while maintaining strong usability, responsive behavior, and clear information hierarchy.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Rather than functioning as a traditional résumé website, the portfolio presents projects as case studies — highlighting the problems being solved, technologies used, design decisions, and development process behind each product.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Responsive, mobile-first interface
+- Custom-designed UI and visual identity
+- Animated hero section with typewriter effect
+- Interactive selected-project showcase
+- Detailed project case studies
+- Professional experience timeline
+- Skills and technology showcase
+- About and career highlights
+- Contact section
+- Downloadable résumé
+- Accessible and semantic UI
+- Optimized images and assets
+- Responsive layouts across desktop, tablet, and mobile
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Selected Work
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The portfolio highlights a curated collection of applications and projects that demonstrate experience across:
 
-## Deploy on Vercel
+- Full-stack application development
+- Frontend engineering
+- Backend and database architecture
+- UI/UX design
+- Product design and prototyping
+- Responsive interface development
+- Business-focused software solutions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Each project provides additional context around the problem, solution, technology stack, design process, and development decisions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Design
+
+The portfolio was designed from scratch with an emphasis on:
+
+- Clear visual hierarchy
+- Generous whitespace
+- Vibrant gradient accents
+- Modern typography
+- Subtle motion and interaction
+- Consistent component styling
+- Responsive layouts
+- Simple and intuitive navigation
+
+The visual system uses a combination of **blue, violet, and pink gradients** alongside neutral backgrounds to create a modern technology-focused aesthetic without sacrificing readability.
+
+The initial user experience and interface were planned through low-fidelity wireframes before progressing into a complete visual design and development implementation.
+
+## Project Structure
