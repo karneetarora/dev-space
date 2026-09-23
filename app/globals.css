@@ -12,3 +12,276 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hero-gradient {
+  background:
+    /* Blue glow - upper/right */
+    radial-gradient(
+      circle at 78% 18%,
+      rgba(56, 189, 248, 0.28) 0%,
+      rgba(56, 189, 248, 0.12) 25%,
+      transparent 52%
+    ),
+
+    /* Pink glow - right */
+    radial-gradient(
+      circle at 100% 55%,
+      rgba(236, 72, 153, 0.22) 0%,
+      rgba(236, 72, 153, 0.10) 28%,
+      transparent 52%
+    ),
+
+    /* Violet glow - center */
+    radial-gradient(
+      circle at 58% 70%,
+      rgba(139, 92, 246, 0.18) 0%,
+      transparent 48%
+    ),
+
+    /* Very subtle blue on left */
+    radial-gradient(
+      circle at 5% 15%,
+      rgba(96, 165, 250, 0.12) 0%,
+      transparent 40%
+    ),
+
+    /* Base */
+    linear-gradient(
+      120deg,
+      #ffffff 0%,
+      #f8fbff 35%,
+      #eef5ff 62%,
+      #f7efff 82%,
+      #fff1f8 100%
+    );
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #2563eb 0%,
+    #6366f1 30%,
+    #8b5cf6 55%,
+    #c026d3 78%,
+    #ec4899 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+
+.nav-link{
+  font-size: 12px;
+}
+
+
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: 300;
+  color: #6366f1;
+  animation: cursor-blink 0.8s infinite;
+}
+
+@keyframes cursor-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   HERO AMBIENT ORBS
+   ========================================================= */
+
+.gradient-bubble {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+
+  /*
+   * Layer 1 = glass highlight
+   * Layer 2 = internal color
+   */
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.25) 9%,
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 68% 72%,
+      rgba(236, 72, 153, 0.75) 0%,
+      rgba(168, 85, 247, 0.72) 28%,
+      rgba(99, 102, 241, 0.65) 52%,
+      rgba(56, 189, 248, 0.5) 75%,
+      rgba(255, 255, 255, 0.15) 100%
+    );
+
+  /* Softer glass edge */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    inset 10px 10px 25px rgba(255, 255, 255, 0.35),
+    inset -12px -12px 30px rgba(99, 102, 241, 0.15),
+    0 20px 60px rgba(99, 102, 241, 0.12),
+    0 0 80px rgba(168, 85, 247, 0.08);
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  opacity: 0.65;
+
+  animation: orb-float 10s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   LARGE ORB
+   Partially hidden behind the laptop / right composition
+   ========================================================= */
+
+.bubble-one {
+  width: 220px;
+  height: 220px;
+
+  right: 5%;
+  top: 18%;
+
+  opacity: 0.22;
+
+  filter: blur(1px);
+
+  animation-duration: 12s;
+}
+
+
+/* =========================================================
+   BOTTOM ORB
+   Cropped by bottom edge
+   ========================================================= */
+
+.bubble-two {
+  width: 150px;
+  height: 150px;
+
+  left: 44%;
+  bottom: -80px;
+
+  opacity: 0.35;
+
+  animation-duration: 11s;
+  animation-delay: -3s;
+}
+
+
+/* =========================================================
+   SMALL ACCENT ORB
+   Top-left decoration
+   ========================================================= */
+
+.bubble-three {
+  width: 65px;
+  height: 65px;
+
+  left: -18px;
+  top: 12%;
+
+  opacity: 0.45;
+
+  animation-duration: 9s;
+  animation-delay: -5s;
+}
+
+
+/* =========================================================
+   SOFT BACKGROUND GLOW
+   This intentionally looks less like a "bubble"
+   ========================================================= */
+
+.bubble-four {
+  width: 320px;
+  height: 320px;
+
+  right: 25%;
+  bottom: -170px;
+
+  opacity: 0.12;
+
+  filter: blur(18px);
+
+  animation-duration: 14s;
+  animation-delay: -7s;
+}
+
+
+/* =========================================================
+   FLOAT
+   ========================================================= */
+
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(5px, -14px, 0) scale(1.025);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .bubble-one {
+    width: 140px;
+    height: 140px;
+
+    right: -50px;
+    top: 45%;
+  }
+
+  .bubble-two {
+    width: 90px;
+    height: 90px;
+
+    left: 65%;
+    bottom: -45px;
+  }
+
+  .bubble-three {
+    width: 45px;
+    height: 45px;
+
+    left: -15px;
+    top: 8%;
+  }
+
+  .bubble-four {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-bubble {
+    animation: none;
+  }
+}
