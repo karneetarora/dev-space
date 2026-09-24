@@ -3,6 +3,7 @@ import AboutMe from '@/components/AboutMe';
 import Hero from '@/components/Hero';
 import SelectedWork from '@/components/SelectedWork';
 import Skills from '@/components/Skills';
+import { githubLink, linkedinLink } from '@/lib/constants';
 import { Mail } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -70,16 +71,20 @@ export default function Home() {
             </button>
           </div>
           <div className="social-links mt-8 flex flex-row flex-wrap gap-4 text-sm md:gap-12 lg:gap-16">
-            <a href="YOUR_LINKEDIN" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-slate-600 transition underline-offset-4 hover:text-blue-600 hover:underline" >
-                <FaLinkedinIn size={17} />
-                LinkedIn
-              </a>
-            <a href="YOUR_GITHUB" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-slate-600 transition underline-offset-4 hover:text-violet-600 hover:underline" >
-              <FaGithub size={18} />
+           <a href={linkedinLink} target="_blank" rel="noopener noreferrer"
+            className=" group flex items-center gap-2 text-sm font-medium text-slate-600 underline-offset-4 transition hover:text-blue-600 hover:underline "
+            >
+            <FaLinkedinIn size={17} className=" transition-transform duration-500 ease-in-out group-hover:rotate-[360deg] " />
+            LinkedIn
+            </a>
+            <a href={githubLink} target="_blank" rel="noopener noreferrer"
+              className=" group flex items-center gap-2 text-sm font-medium text-slate-600 underline-offset-4 transition hover:text-violet-600 hover:underline "
+            >
+              <FaGithub size={18} className=" transition-transform duration-500 ease-in-out group-hover:rotate-[360deg] " />
               GitHub
             </a>
             <a href="mailto:your@email.com" className="flex items-center gap-2 text-sm font-medium text-slate-600 transition underline-offset-4 hover:text-pink-600 hover:underline" >
-              <Mail size={18} strokeWidth={1.8} />
+              <Mail size={18} strokeWidth={1.8} className='transition-transform duration-500 ease-in-out hover:rotate-360'/>
               Email
             </a>
           </div>
