@@ -77,6 +77,7 @@ export default function Skills() {
       className="relative overflow-hidden border-y border-slate-200 bg-slate-50/70"
     >
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-16">
+        {/* Header */}
         <div className="mb-8">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
             Skills & Tools
@@ -91,65 +92,136 @@ export default function Skills() {
           </div>
         </div>
 
-{/* Skills */}
-<div className="space-y-6">
-  {skills.map((group, groupIndex) => (
-    <div
-      key={group.category}
-      className="grid grid-cols-1 gap-3 md:grid-cols-[120px_minmax(0,1fr)] md:items-center"
-    >
-      {/* Category */}
-      <h3 className="text-base font-semibold text-slate-800 md:text-lg">
-        {group.category}
-      </h3>
-
-      {/* Marquee viewport */}
-      <div className="marquee min-w-0 overflow-hidden">
-        <div
-          className={`
-            marquee-track
-            flex w-max gap-2.5
-            ${
-              groupIndex % 2 === 0
-                ? "animate-marquee-left"
-                : "animate-marquee-right"
-            }
-          `}
-        >
-          {/* Duplicate array for seamless looping */}
-          {[...group.items, ...group.items].map((skill, index) => {
-            const Icon = skill.icon;
+        {/* Skills */}
+        <div className="space-y-6">
+          {skills.map((group, groupIndex) => {
+            /*
+             * Shorter groups need extra items so each half of the
+             * marquee remains wider than the viewport on desktop.
+             */
+            const marqueeItems =
+              group.items.length <= 4
+                ? [...group.items, ...group.items]
+                : group.items;
 
             return (
               <div
-                key={`${skill.name}-${index}`}
+                key={group.category}
                 className="
-                  flex shrink-0 items-center gap-2.5
-                  rounded-lg border border-slate-200
-                  bg-white px-3.5 py-2
-                  text-sm font-medium text-slate-700
-                  shadow-sm
-                  transition-all duration-200
-                  hover:border-violet-200
-                  hover:shadow-md
+                  grid grid-cols-1 gap-3
+                  md:grid-cols-[120px_minmax(0,1fr)]
+                  md:items-center
                 "
               >
-                <Icon
-                  className="h-[18px] w-[18px]"
-                  style={{ color: skill.color }}
-                />
+                {/* Category */}
+                <h3 className="text-base font-semibold text-slate-800 md:text-lg">
+                  {group.category}
+                </h3>
 
-                <span className="whitespace-nowrap">
-                  {skill.name}
-                </span>
+                {/* Marquee viewport */}
+                <div
+                  className="
+                    marquee
+                    min-w-0
+                    cursor-grab
+                    select-none
+                    overflow-x-auto
+                    overflow-y-hidden
+                    touch-pan-x
+                    active:cursor-grabbing
+                    [scrollbar-width:none]
+                    [&::-webkit-scrollbar]:hidden
+                  "
+                >
+                  {/* Moving track */}
+                  <div
+                    className={`
+                      marquee-track
+                      flex w-max
+                      hover:[animation-play-state:paused]
+                      ${
+                        groupIndex % 2 === 0
+                          ? "animate-marquee-left"
+                          : "animate-marquee-right"
+                      }
+                    `}
+                  >
+                    {/* First group */}
+                    <div className="flex shrink-0 gap-2.5 pr-2.5">
+                      {marqueeItems.map((skill, index) => {
+                        const Icon = skill.icon;
+
+                        return (
+                          <div
+                            key={`original-${skill.name}-${index}`}
+                            className="
+                              flex shrink-0 items-center gap-2.5
+                              rounded-lg
+                              border border-slate-200
+                              bg-white
+                              px-3.5 py-2
+                              text-sm font-medium
+                              text-slate-700
+                              shadow-sm
+                              transition-all
+                              duration-200
+                              hover:border-violet-200
+                              hover:shadow-md
+                            "
+                          >
+                            <Icon
+                              className="h-[18px] w-[18px]"
+                              style={{ color: skill.color }}
+                            />
+
+                            <span className="whitespace-nowrap">
+                              {skill.name}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Duplicate group */}
+                    <div
+                      className="flex shrink-0 gap-2.5 pr-2.5"
+                      aria-hidden="true"
+                    >
+                      {marqueeItems.map((skill, index) => {
+                        const Icon = skill.icon;
+
+                        return (
+                          <div
+                            key={`duplicate-${skill.name}-${index}`}
+                            className="
+                              flex shrink-0 items-center gap-2.5
+                              rounded-lg
+                              border border-slate-200
+                              bg-white
+                              px-3.5 py-2
+                              text-sm font-medium
+                              text-slate-700
+                              shadow-sm
+                            "
+                          >
+                            <Icon
+                              className="h-[18px] w-[18px]"
+                              style={{ color: skill.color }}
+                            />
+
+                            <span className="whitespace-nowrap">
+                              {skill.name}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
             );
           })}
         </div>
-      </div>
-    </div>
-  ))}
-</div>
       </div>
     </section>
   );

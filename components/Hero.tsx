@@ -12,17 +12,17 @@ export default function Hero() {
   useEffect(() => {
     const currentTagline = taglines[taglineIndex];
 
-    let delay = isDeleting ? 55 : 100;
+   let delay = isDeleting ? 40 : 75;
 
-    // Word has finished typing
-    if (!isDeleting && displayedText === currentTagline) {
-      delay = 1600;
-    }
+// Word has finished typing
+if (!isDeleting && displayedText === currentTagline) {
+  delay = 1100;
+}
 
-    // Word has finished deleting
-    if (isDeleting && displayedText === "") {
-      delay = 350;
-    }
+// Word has finished deleting
+if (isDeleting && displayedText === "") {
+  delay = 150;
+}
 
     const timeout = setTimeout(() => {
       // Start deleting after full word is displayed

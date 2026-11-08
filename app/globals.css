@@ -275,14 +275,342 @@ body {
   }
 }
 
+/* =========================================================
+   GET IN TOUCH SECTION
+========================================================= */
+
+.contact-section {
+  background:
+    radial-gradient(
+      circle at 70% 50%,
+      rgba(109, 40, 217, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      110deg,
+      #071a4d 0%,
+      #0a1f59 45%,
+      #111f58 70%,
+      #071a4d 100%
+    );
+}
+
+
+/* =========================================================
+   CONTACT FORM INPUTS
+========================================================= */
+
+.contact-input {
+  width: 100%;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.5rem;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  padding: 0.8rem 0.9rem;
+
+  color: #ffffff;
+
+  font-size: 0.875rem;
+
+  outline: none;
+
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.contact-input::placeholder {
+  color: rgba(219, 234, 254, 0.55);
+}
+
+.contact-input:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.contact-input:focus {
+  border-color: rgba(167, 139, 250, 0.75);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 0 0 3px rgba(139, 92, 246, 0.12),
+    0 0 25px rgba(139, 92, 246, 0.08);
+}
+
+
+/* =========================================================
+   GRADIENT BUBBLES
+========================================================= */
+
+.contact-bubble {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 28% 22%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.25) 9%,
+      transparent 23%
+    ),
+    linear-gradient(
+      135deg,
+      #8b5cf6 0%,
+      #6d5dfc 25%,
+      #22d3ee 58%,
+      #60a5fa 78%,
+      #ec4899 100%
+    );
+
+  box-shadow:
+    inset -12px -12px 30px rgba(70, 30, 180, 0.25),
+    inset 10px 10px 25px rgba(255, 255, 255, 0.22),
+    0 0 30px rgba(99, 102, 241, 0.3);
+
+  filter: saturate(115%);
+
+  animation: contactBubbleFloat 8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TOP LEFT BUBBLE
+
+   This bubble intentionally sits OUTSIDE of the clipped
+   background container.
+
+   Negative top moves roughly half of it into the section
+   above Get In Touch.
+========================================================= */
+
+.contact-bubble-left-top {
+  width: 130px;
+  height: 130px;
+
+  top: -65px;
+  left: -65px;
+
+  z-index: 20;
+
+  animation-delay: 0s;
+}
+
+
+/* =========================================================
+   BOTTOM LEFT BUBBLE
+========================================================= */
+
+.contact-bubble-left-bottom {
+  width: 180px;
+  height: 180px;
+
+  bottom: -52px;
+  left: -55px;
+
+  z-index: 1;
+
+  animation-delay: -2.5s;
+}
+
+
+/* =========================================================
+   BOTTOM RIGHT BUBBLE
+========================================================= */
+
+.contact-bubble-right-bottom {
+  width: 125px;
+  height: 125px;
+
+  right: -55px;
+  bottom: -55px;
+
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      circle at 28% 22%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.2) 10%,
+      transparent 24%
+    ),
+    linear-gradient(
+      135deg,
+      #22d3ee 0%,
+      #6366f1 35%,
+      #a855f7 65%,
+      #ec4899 100%
+    );
+
+  animation-delay: -4s;
+}
+
+
+/* =========================================================
+   BUBBLE ANIMATION
+========================================================= */
+
+@keyframes contactBubbleFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0) rotate(4deg);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .contact-bubble-left-top {
+    width: 100px;
+    height: 100px;
+
+    top: -50px;
+    left: -50px;
+  }
+
+  .contact-bubble-left-bottom {
+    width: 80px;
+    height: 80px;
+
+    left: -40px;
+    bottom: -40px;
+  }
+
+  .contact-bubble-right-bottom {
+    width: 90px;
+    height: 90px;
+
+    right: -45px;
+    bottom: -45px;
+  }
+}
+
 
 /* =========================================================
    REDUCED MOTION
-   ========================================================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .gradient-bubble {
+  .contact-bubble {
     animation: none;
+  }
+}
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience-row {
+  min-height: 120px;
+}
+
+
+/* =========================================================
+   EXPERIENCE CARD
+========================================================= */
+
+.experience-card {
+  position: relative;
+
+  padding: 1.25rem;
+
+  border: 1px solid rgba(203, 213, 225, 0.65);
+  border-radius: 0.8rem;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.02),
+    0 4px 18px rgba(15, 23, 42, 0.025);
+
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(139, 92, 246, 0.3);
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.06),
+    0 0 20px rgba(139, 92, 246, 0.04);
+}
+
+
+/* =========================================================
+   EXPERIENCE ICONS
+========================================================= */
+
+.experience-icon-blue {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(219, 234, 254, 0.9),
+      rgba(239, 246, 255, 0.75)
+    );
+}
+
+.experience-icon-pink {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(252, 231, 243, 0.9),
+      rgba(254, 242, 242, 0.75)
+    );
+}
+
+.experience-icon-yellow {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(254, 249, 195, 0.7),
+      rgba(248, 250, 252, 0.9)
+    );
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .experience-row {
+    min-height: auto;
+  }
+
+  .experience-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-card {
+    transition: none;
+  }
+
+  .experience-card:hover {
+    transform: none;
   }
 }
 
@@ -306,12 +634,36 @@ body {
   }
 }
 
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 .animate-marquee-left {
-  animation: marquee-left 24s linear infinite;
+  animation: marquee-left 25s linear infinite;
 }
 
 .animate-marquee-right {
-  animation: marquee-right 24s linear infinite;
+  animation: marquee-right 25s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 .marquee:hover .marquee-track {

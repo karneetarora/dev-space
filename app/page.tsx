@@ -1,5 +1,7 @@
 'use client'
 import AboutMe from '@/components/AboutMe';
+import Experience from '@/components/Experience';
+import GetInTouch from '@/components/GetInTouch';
 import Hero from '@/components/Hero';
 import SelectedWork from '@/components/SelectedWork';
 import Skills from '@/components/Skills';
@@ -41,13 +43,105 @@ export default function Home() {
         <div className="gradient-bubble bubble-three" />
         <div className="gradient-bubble bubble-four" />
         <div className="flex flex-1 flex-col items-start gap-1 relative z-10 md:gap-2">
-          <ul className=" mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-violet-200/70 bg-white/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 shadow-sm backdrop-blur-md " >
-            <li>Build</li>
-            <li aria-hidden="true" className="h-1 w-1 rounded-full bg-violet-400" />
-            <li>Design</li>
-            <li aria-hidden="true" className="h-1 w-1 rounded-full bg-pink-400" />
-            <li>Impact</li>
-          </ul>
+<div
+  className="
+    group
+    relative
+    mb-5
+    w-fit
+    rounded-full
+    bg-gradient-to-r
+    from-violet-400/80
+    via-fuchsia-300/70
+    to-cyan-300/80
+    p-[1px]
+    shadow-[0_6px_22px_rgba(139,92,246,0.14)]
+    transition-all
+    duration-300
+    hover:shadow-[0_8px_28px_rgba(139,92,246,0.22)]
+  "
+>
+  <ul
+    className="
+      relative
+      inline-flex
+      items-center
+      gap-2
+      overflow-hidden
+      rounded-full
+      bg-white/80
+      px-4
+      py-2
+      text-xs
+      font-semibold
+      uppercase
+      tracking-[0.18em]
+      text-slate-600
+      backdrop-blur-xl
+    "
+  >
+    {/* Gloss / shine */}
+    <span
+      aria-hidden="true"
+      className="
+        pointer-events-none
+        absolute
+        inset-x-2
+        top-[1px]
+        h-[45%]
+        rounded-full
+        bg-gradient-to-b
+        from-white/90
+        via-white/35
+        to-transparent
+      "
+    />
+
+    {/* Soft inner glow */}
+    <span
+      aria-hidden="true"
+      className="
+        pointer-events-none
+        absolute
+        inset-0
+        rounded-full
+        shadow-[inset_0_1px_0_rgba(255,255,255,0.95)]
+      "
+    />
+
+    <li className="relative z-10">Build</li>
+
+    <li
+      aria-hidden="true"
+      className="
+        relative
+        z-10
+        h-1
+        w-1
+        rounded-full
+        bg-violet-400
+        shadow-[0_0_6px_rgba(167,139,250,0.8)]
+      "
+    />
+
+    <li className="relative z-10">Design</li>
+
+    <li
+      aria-hidden="true"
+      className="
+        relative
+        z-10
+        h-1
+        w-1
+        rounded-full
+        bg-pink-400
+        shadow-[0_0_6px_rgba(244,114,182,0.8)]
+      "
+    />
+
+    <li className="relative z-10">Impact</li>
+  </ul>
+</div>
           {/* <h1 className="tag-line text-5xl font-bold leading-[1.05] md:text-6xl">
             Hi, Im AK. <br/>I <span className="gradient-text lg:text-8xl">{tagline}</span>.
           </h1> */}
@@ -95,11 +189,9 @@ export default function Home() {
       </section>
       <SelectedWork />
       <AboutMe />
+      <Experience />
       <Skills />
-      <section id='my-experiences'>
-      </section>
-      <section id='contact-me'>
-      </section>
+      <GetInTouch />
     </div>
   );
 }
